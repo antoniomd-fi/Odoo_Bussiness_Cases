@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="custom_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">custom.res.config.settings.view.form.inherit.project</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="50"/>
+        <field name="inherit_id" ref="project.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//h2[text()='Tasks Management']" position="replace">
+                <h2>Milestones Management</h2>
+            </xpath>
+            <xpath expr="//div[@id='tasks_management']/div[hasclass('o_setting_box')]/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted">
+                    Split your milestones to organize your work into sub-milestones
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='recurring_tasks_setting']/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted">
+                    Auto-generate milestones for regular activities
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='task_dependencies_setting']/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted">
+                    Determine the order in which to perform milestones
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='project_stages']/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted">
+                    Track the progress of your sites
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='log_time_tasks_setting']/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted">
+                    Track time spent on projects and milestones
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='project_time_management']/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted" name="project_forecast_msg">
+                    Plan resource allocation across sites and estimate deadlines more accurately
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='track_customer_satisfaction_setting']/div[hasclass('o_setting_right_pane')]/div[hasclass('text-muted')]" position="replace">
+                <div class="text-muted">
+                    Track customer satisfaction on milestones
+                </div>
+            </xpath>
+        </field>
+    </record> 
+</odoo>

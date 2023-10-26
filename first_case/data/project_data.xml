@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Menu item -->
+    <record model="ir.ui.menu" id="project.menu_main_pm">
+        <field name="name">Site</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_projects">
+        <field name="name">Sites</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_project_management">
+        <field name="name">My Milestones</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_project_config_project_stage">
+        <field name="name">Site Stages</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_project_config_project">
+        <field name="name">Milestones Stages</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_projects_group_stage">
+        <field name="name">Sites</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_projects_config">
+        <field name="name">Sites</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_projects_config_group_stage">
+        <field name="name">Sites</field> 
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_project_report_task_analysis">
+        <field name="name">Milestones Analysis</field> 
+    </record>    
+
+    
+
+    <!-- Projects and tasks -->
+    
+    <record id="project.open_create_project" model="ir.actions.act_window">
+        <field name="name">Create a Site</field>
+    </record>
+    
+</odoo>
+ 

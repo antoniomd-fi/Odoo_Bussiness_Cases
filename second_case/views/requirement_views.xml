@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="requirement_action" model="ir.actions.act_window">
+        <field name="name">Requirements</field>
+        <field name="res_model">dynamic.requirement.field</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dynamic_requirement_field_tree"/>
+    </record>
+
+    <menuitem action="requirement_action" id="project_menu_requirement" parent="project.menu_project_config" sequence="2"/>
+
+    <!-- List View -->
+    <record id="view_dynamic_requirement_field_tree" model="ir.ui.view">
+        <field name="name">dynamic.requirement.field.tree</field>
+        <field name="model">dynamic.requirement.field</field>
+        <field name="arch" type="xml">
+            <tree
+                string="Requirement"
+            >
+                <field name="name" />
+                <field name="type" />
+                <field name="company" />
+                <field name="active" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_dynamic_requirement_field_form" model="ir.ui.view">
+        <field name="name">dynamic.requirement.field.form</field>
+        <field name="model">dynamic.requirement.field</field>
+        <field name="arch" type="xml">
+            <form string="Requirement">
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="name" placeholder="Title" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <group>
+                                <field name="type"/>
+                                <field name="company"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Conditions">
+                                <field name='mandatory_project_line' widget="one2many_list">
+                                    <tree>
+                                        <field name="stage" string="Site Stage"/>
+                                        <field name="mandatory_fields" />
+                                        <field name="custom_warning_message" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="requirement_line_action" model="ir.actions.act_window">
+        <field name="name">Requirement Line</field>
+        <field name="res_model">dynamic.requirement.field.line</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="view_dynamic_requirement_field_line_form" model="ir.ui.view">
+        <field name="name">dynamic.requirement.field.line.form</field>
+        <field name="model">dynamic.requirement.field.line</field>
+        <field name="arch" type="xml">
+            <form string="Requirement Line">
+                <sheet>
+                    <group>
+                        <group>
+                                <field name="sequence"/>
+                                <field name="stage"/>
+                                <field name="company"/>
+                                <field name="custom_warning_message"/>
+                        </group>
+                        <notebook>
+                            <page string="Fields">
+                                <field name='mandatory_fields' widget="many2many_list">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="model" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
